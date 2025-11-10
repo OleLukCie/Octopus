@@ -1,0 +1,35 @@
+task: chinese_to_english_medical
+description: Chinese-to-English translation for medical domain (patient records, prescriptions)
+domain: medical
+data_dir: data
+
+adapters:
+  source: chinese_adapter_v1
+  source_params:
+    embed_dim: 768
+    model_name: bert-base-chinese
+    max_seq_len: 128
+  target: english_adapter_v1
+  target_params:
+    embed_dim: 768
+    model_name: bert-base-uncased
+    max_seq_len: 128
+
+subnets:
+  - name: lexical_subnet_v1
+    params:
+      memory_path: memory/medical_lexical.json
+  - name: syntax_subnet_v1
+    params:
+      memory_path: memory/medical_syntax.json
+  - name: context_subnet_v1
+    params:
+      memory_path: memory/medical_context.json
+  - name: domain_subnet_v1
+    params:
+      memory_path: memory/medical_domain.json
+
+coordinator:
+  name: attention_coordinator_v1
+  params:
+    hidden_dim: 256

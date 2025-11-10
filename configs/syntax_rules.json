@@ -1,0 +1,16 @@
+{
+  "syntax_templates": [
+    {
+      "source_structure": "因为{X}",
+      "target_structure": "because he has {X}",
+      "order": "result_first"
+    }
+  ],
+  "article_templates": [
+    {
+      "noun_type": "countable_singular",
+      "context_has_entity": true,
+      "article": "the"
+    }
+  ]
+}

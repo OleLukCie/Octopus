@@ -1,0 +1,7 @@
+{
+  "pronoun_entity_mapping": {
+    "source_pronoun": "他",
+    "entity_type": "human",
+    "target_pattern": "the {entity}"
+  }
+}
